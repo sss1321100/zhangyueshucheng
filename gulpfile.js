@@ -18,7 +18,7 @@ gulp.task('server', function () {
     browserSync.init({
         server: {
             baseDir: './dist',
-            index: './html/suzhig.html'
+            index: './html/liuyingjie.html'
         }
     })
 })
@@ -32,12 +32,12 @@ gulp.task('js', function () {
 
 gulp.task('less', function () {
     return gulp.src('./src/style/*.less')
-        .pipe(plumber())
-        .pipe(less())
-        .pipe(concat({
+        .pipe( plumber() )
+        .pipe( less() )
+        .pipe( concat({
             ext: '.css'
-        }))
-        .pipe(minifyCss())
+        }) )
+        .pipe( minifyCss() )
         .pipe(gulp.dest('dist/style'))
 });
 
