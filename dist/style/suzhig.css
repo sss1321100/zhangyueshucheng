@@ -1,10 +1,1 @@
-p {
-    font-size: 20px;
-    color: red;
-    font-weight: bolder;
-    background: green
-}
-
-div {
-    color: #00f
-}
+p{font-size:20px;color:red;font-weight:bolder;background:green}div{color:#00f;background:red;font-size:40px}
