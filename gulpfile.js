@@ -28,7 +28,10 @@ gulp.task('js', function () {
         .pipe(uglify())
         .pipe(gulp.dest('dist/script'))
 });
-
+gulp.task('css', function () {
+    return gulp.src('./src/script/*.css')
+        .pipe(gulp.dest('dist/css'))
+});
 
 gulp.task('less', function () {
     return gulp.src('./src/style/*.less')
@@ -79,7 +82,7 @@ gulp.task('watch', function () {
     gulp.watch('./src/html/*.html', ['html']).on('change', browserSync.reload);
 })
 gulp.task('redist', function () {
-    runSequence('clean', ['html', 'less', 'js', 'images', 'watch'])
+    runSequence('clean', ['html', 'less', 'js', 'images', 'watch','css'])
 })
 
 gulp.task('default', ['redist', 'server']);
