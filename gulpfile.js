@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     runSequence = require('gulp-run-sequence'),
     clean = require('gulp-clean'),
+    fileinclude = require('gulp-file-include'),
     browserSync = require('browser-sync').create();
 
 gulp.task('server', function () {
@@ -22,10 +23,13 @@ gulp.task('server', function () {
         }
     })
 })
+gulp.task('font', function () {
+    return gulp.src('./src/font/{css,fonts}/*')
+        .pipe(gulp.dest('dist/font'))
+});
 
 gulp.task('js', function () {
     return gulp.src('./src/script/*.js')
-        .pipe(uglify())
         .pipe(gulp.dest('dist/script'))
 });
 gulp.task('css', function () {
@@ -46,11 +50,15 @@ gulp.task('less', function () {
 
 gulp.task('html', function () {
     return gulp.src('./src/html/*.html')
+        .pipe( fileinclude({               
+            prefix: '@@',                
+            basepath: 'src/temp',           
+            indent: true,                    
+        }) )
         .pipe(plumber())
         .pipe(minifyHtml())
         .pipe(gulp.dest('dist/html'))
 });
-
 
 gulp.task('images', function () {
     return gulp.src('./src/images/**/*.{png,jpg,jpeg,ico,gif,svg}')
@@ -71,11 +79,6 @@ gulp.task('clean', function () {
         .pipe(clean())
 })
 
-// gulp.task('watch', function () {
-//     gulp.watch('./src/scripts/*.js', ['js']).on('change', browserSync.reload);
-//     gulp.watch('./src/style/less/*.less', ['less', 'f5']).on('change', browserSync.reload);
-//     gulp.watch('./src/html/*.html', ['html']).on('change', browserSync.reload);
-// })
 gulp.task('watch', function () {
     gulp.watch('./src/script/*.js', ['js']).on('change', browserSync.reload);
     gulp.watch('./src/style/*.less', ['less']).on('change', browserSync.reload);
