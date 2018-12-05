@@ -1,0 +1,123 @@
+ .px2rem(@name, @px)
+ {@{name}: @px / 75 * 1rem;}
+ *{
+ 	padding: 0;
+ 	margin: 0;
+ }
+ li{
+ 	list-style:none;
+ }
+header{
+	
+	height: 60px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 8px solid #f2f2f2;
+}
+.sousuo{
+	width: 90%;
+	height: 40px;
+	background: #f2f2f2;
+	border: none;
+}
+.center{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	flex-direction: column;
+}
+.c1{
+	justify-content: center;
+	width: 90%;
+
+}
+.biaoti{
+	margin-left: 10px;
+		height: 60px;
+		line-height: 60px;
+		font-size: 14px;
+		font-weight: bolder;
+
+	}
+	.biaoti span:last-child{
+		float: right;
+		font-weight: normal;
+		font-size: 12px;
+	}
+.shu1{
+	display: flex;
+
+}
+.shu1 dl{
+	padding-left: 15px;
+	float: right;
+}
+.shu1 dl .tu{
+	float: left;
+}
+.shu1 dl .shuming{
+	font-weight: bolder;
+}
+.shu1 dl .zuozhe{
+	font-size: 12px;
+	height: 50px;
+	line-height: 50px;
+	color: #ccc;
+}
+
+.shu1 dl .jianjie{
+	padding-top: 10px;
+	color: #ccc;
+	font-size: 12px;
+}
+.shu1 dl .leixing{
+	display: flex;
+	justify-content: space-between;
+
+}
+.shu1 dl .leixing span{
+	color:#ccc;
+	font-size: 12px;
+
+}
+.shu1 dl .leixing span:last-child{
+	border:1px solid #ccc;
+	border-radius: 5px;
+}
+.c
+.c1 li{
+	margin-top: 80px;
+
+}
+.c1 li:nth-child(1){
+	margin-top:0;
+}
+.c1 li:nth-child(2){
+	margin-top:0;
+}
+footer{
+    width: 100%;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+    padding:10px 0;
+    border-top: 1px solid #ccc;
+    dl{
+        flex: 1;
+         text-align: center;
+        dt{
+            text-align: center;
+            img{
+                width: 25px;
+                height: 25px;
+            } 
+        }
+        dd{
+            margin-left: 0;
+        }
+    }
+}
