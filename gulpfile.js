@@ -23,9 +23,9 @@ gulp.task('server', function () {
         }
     })
 })
-gulp.task('font', function () {
-    return gulp.src('./src/font/{css,fonts}/*')
-        .pipe(gulp.dest('dist/font'))
+gulp.task('fts', function () {
+    return gulp.src('./src/fts/{css,fonts}/*')
+        .pipe(gulp.dest('dist/fts'))
 });
 
 gulp.task('js', function () {
