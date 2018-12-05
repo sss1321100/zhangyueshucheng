@@ -13,7 +13,7 @@
                 location.href = "songzhanyu.html";
             break;
             case $(this).index() == 3 :
-                location.href = "zhousong";
+                location.href = "zhousong.html";
             break;
             case $(this).index() == 4 :
                 location.href = "suzhig.html";
