@@ -4,72 +4,79 @@
 }
 .header{
     display: flex;
+    align-items: center;
+    font-size: 0.37rem;
+    height: 1.4rem;
+    padding:0 0.27777rem;
     input{
-        width: 80%;
-        height: 35px;
+        flex: 1;
         background-color: #f2f2f2;
         color: #adadad;
         border: none;
         border-radius: 6px;
         outline: none;
-        margin-left: 5%;
+        height: 0.98rem;
     }
     span{
-        display: inline-block;
-        width: 10%;
-        line-height: 35px;
+        width: 1.3888rem;
         text-align: center;
     }
 }
     
 .ul {
-    display: flex;
-    li{  
-        height: 35px;
+    display: flex; 
+    font-size: 0.37rem;
+    height: 1.4rem; 
+    line-height: 1.4rem;
+    li{ 
+        flex: 1; 
         list-style: none;
-        line-height: 35px;
-        flex: 1;
         text-align: center;
-        &:hover{
-            color: red;
-        }
      } 
 }
 
 .main{
-    height: 280px;
-    padding: 0 5%;
+    height:5.8rem;
+    margin-bottom: 1.2rem; 
     .main_tite{
-        height: 22px;
-        width: 40%;
-        line-height: 22px;
+        height: 0.61rem;
+        width: 3.5rem;
+        line-height: 0.61rem;
+        font-size: 0.28rem;
         color: #ffffff;
         text-align: center;
         background-color: #5fa6f8;
     }
     .main_h{
         display: flex;
+        padding: 0.555rem 0.555rem 0;
         .main_hl{
-
+            img{
+                width: 2.3rem;
+                height: 3.24rem;
+            }
         }
         .main_hc{
-            margin: 0 15px;
-          h{
-              line-height: 27px;
+            margin: 0.355rem;
+          h3{
+              font-size: 0.44rem; 
+              padding-bottom: 0.18rem;
+              line-height: 0.4707rem;
           }  
           p{
-            line-height: 27px;
+              font-size: 0.3518rem;
+              line-height: 0.61rem;
             span{
-                display:inline-block;
-                padding: 0 4px;
+                padding: 0.0925rem;
                 border: 1.5px solid #cccccc;
             }
           }
           input{
               width: 100%;
-              height: 24px;
+              font-size: 0.3518rem;
+              height: 0.67592rem;
               background-color: #5fa6f8;
-              margin: 5px 0;
+              margin: 0.2129rem 0;
               border: none;
               color: #ffffff;
           }
@@ -79,8 +86,10 @@
         }
     }
     .main_b{
+        padding: 0 0.55rem;
         p{
-            line-height: 24px;
+            font-size: 0.3518rem;
+            line-height: 0.55555rem;
         }
     }
 }
