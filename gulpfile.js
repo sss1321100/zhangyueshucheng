@@ -19,7 +19,7 @@ gulp.task('server', function () {
     browserSync.init({
         server: {
             baseDir: './dist',
-            index: './html/songzhanyu.html'
+            index: 'html/zhousong.html'
         }
     })
 })
