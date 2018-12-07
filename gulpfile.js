@@ -15,14 +15,8 @@ var gulp = require('gulp'),
     fileinclude = require('gulp-file-include'),
     browserSync = require('browser-sync').create();
 
-gulp.task('server', function () {
-    browserSync.init({
-        server: {
-            baseDir: './dist',
-            index: 'html/zhousong.html'
-        }
-    })
-})
+
+
 gulp.task('fts', function () {
     return gulp.src('./src/fts/{css,fonts}/*')
         .pipe(gulp.dest('dist/fts'))
@@ -78,14 +72,23 @@ gulp.task('clean', function () {
         })
         .pipe(clean())
 })
-
+gulp.task('serve', function () {
+    browserSync.init({
+        server: {
+            baseDir: './dist'
+        },
+        startPath: 'html/zhousong.html',
+    })
+})
 gulp.task('watch', function () {
     gulp.watch('./src/script/*.js', ['js']).on('change', browserSync.reload);
     gulp.watch('./src/style/*.less', ['less']).on('change', browserSync.reload);
     gulp.watch('./src/html/*.html', ['html']).on('change', browserSync.reload);
 })
 gulp.task('redist', function () {
-    runSequence('clean', ['html', 'less', 'js', 'images', 'watch','css'])
+    runSequence('clean','html','less', 'js', 'images','css', 'serve')
 })
 
-gulp.task('default', ['redist', 'server']);
+gulp.task('default', ['redist','watch'],function(){
+    //gulp.start('serve')
+});
